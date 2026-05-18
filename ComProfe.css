@@ -1,0 +1,745 @@
+.main { text-align: center; } /* Clase para centrar texto */
+  /* Variables globales */ /* Comentario de sección */
+:root { /* Inicio del bloque de variables CSS */
+  --bg1: #400947; /* Color 1 del degradado */
+  --bg2: #00cbc1; /* Color 2 del degradado */
+  --bg3: #50c9c3; /* Color 3 del degradado */
+  --bg4: #b728ca; /* Color 4 del degradado */
+  --bg5: #fff; /* Color de fondo claro (para contraste) */
+  --bg6: #000000; /* Color de fondo oscuro (para contraste) */
+  --accent: #4a90e2; /* Color de acento principal (botones, líneas) */
+  --accent-2: #50c9c3; /* Segundo color de acento (degradados) */
+  --card-bg: #ffffffee; /* Fondo semitransparente para tarjetas/sections */
+  --muted: #666; /* Color gris para textos secundarios */
+  --max-width: 1250px; /* Ancho máximo del contenedor central */
+  --gap: 16px; /* Espacio por defecto entre elementos en grids */
+  --radius: 25px; /* Radio de borde por defecto para tarjetas y botones */
+  --text: #222; /* Color base del texto */
+} /* Fin del bloque de variables */
+
+/* Reset y base */ /* Comentario de sección */
+* { box-sizing: border-box; } /* Incluir padding y border en el tamaño total de los elementos */
+html, body { /* Selecciona html y body a la vez */
+  margin: 0; /* Elimina margen por defecto del navegador */
+  padding: 0; /* Elimina padding por defecto del navegador */
+  font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif; /* Fuente por defecto del sitio */
+  background: linear-gradient(135deg, var(--bg5), var(--bg6)); /* Fondo degradado diagonal */
+  color: var(--text); /* Color de texto por defecto usando la variable */
+  font-size: 20px; /* Tamaño base de fuente */
+  -webkit-font-smoothing: antialiased; /* Suavizado de fuentes en WebKit */
+  -moz-osx-font-smoothing: grayscale; /* Suavizado de fuentes en macOS */
+  min-height: 100vh; /* Asegura que el body ocupe toda la pantalla */
+} /* Fin de html, body */
+
+a { color: inherit; text-decoration: none; } /* Enlaces heredan color y sin subrayado */
+img { max-width: 100%; display: block; } /* Imágenes no exceden su contenedor y son bloques */
+
+/* Contenedor central */ /* Comentario de sección */
+.wrap { /* Contenedor que centra y limita el ancho del contenido */
+  max-width: var(--max-width); /* Ancho máximo definido por variable */
+  margin: auto; /* Centra horizontalmente */
+  padding: 20px; /* Espacio interno alrededor del contenido */
+} /* Fin .wrap */
+
+/* Top links centrados */ /* Comentario de sección */
+.top-links { /* Contenedor para los enlaces superiores */
+  display: flex; /* Usa flexbox para alinear los enlaces */
+  justify-content: center; /* Centra horizontalmente los elementos hijos */
+  align-items: center; /* Centra verticalmente los elementos hijos */
+  gap: 12px; /* Espacio entre cada enlace */
+  margin: 18px 0; /* Margen vertical alrededor del bloque */
+  flex-wrap: wrap; /* Permite que los enlaces salten a la siguiente línea en pantallas pequeñas */
+} /* Fin .top-links */
+
+/* Botón base */ /* Comentario de sección */
+.btn { /* Estilo base reutilizable para botones y enlaces con clase .btn */
+  display: inline-block; /* Se comporta como bloque en línea */
+  padding: 8px 14px; /* Espaciado interno horizontal y vertical */
+  border-radius: 6px; /* Bordes redondeados */
+  background: rgba(112, 113, 119, 0.452); /* Fondo semitransparente claro */
+  color: #04092f; /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  border: 1px solid rgba(255,255,255,0.15); /* Borde sutil */
+  font-weight: 600; /* Texto en semi-negrita */
+  cursor: pointer; /* Cursor puntero al pasar por encima */
+  line-height: 1; /* Altura de línea compacta */
+} /* Fin .btn */
+
+.btn.primary { /* Variante de botón primario */
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); /* Degradado de acento */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+} /* Fin .btn.primary */
+
+.sobre-text { display: flex; flex-direction: column; }
+.btn-right { margin-left: auto; } /* empuja el botón al extremo derecho */
+
+
+/* Header */ /* Comentario de sección */
+.site-header { /* Cabecera del sitio */
+  text-align: center; /* Centra el contenido */
+  padding: 18px 0; /* Espaciado vertical */
+} /* Fin .site-header */
+
+.name { /* Estilo del nombre principal */
+  margin: 0; /* Sin margen */
+  color: #fff; /* Texto blanco */
+  font-size: 28px; /* Tamaño de fuente grande */
+  letter-spacing: 0.6px; /* Espaciado entre letras */
+} /* Fin .name */
+
+.tags { /* Estilo para etiquetas/roles */
+  margin: 6px 0 0 0; /* Margen superior pequeño */
+  color: rgba(255,255,255,0.9); /* Color blanco ligeramente translúcido */
+  font-weight: 500; /* Peso medio */
+} /* Fin .tags */
+
+/* Card genérica */ /* Comentario de sección */
+.card { /* Estilo base para secciones tipo tarjeta */
+  background: var(--card-bg); /* Fondo blanco translúcido usando variable */
+  border-radius: var(--radius); /* Bordes redondeados usando variable */
+  padding: 16px; /* Espacio interno */
+  margin-bottom: 25px; /* Separación inferior entre tarjetas */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06); /* Sombra suave */
+} /* Fin .card */
+
+/* Grid del portfolio */ /* Comentario de sección */
+.grid { /* Contenedor en rejilla para las tarjetas del portfolio */
+  display: grid; /* Activa CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Columnas responsivas */
+  gap: var(--gap); /* Espacio entre celdas usando variable */
+  align-items: start; /* Alinea los items al inicio verticalmente */
+} /* Fin .grid */
+/* ============================
+   Portfolio: 4 en fila -> 2 en fila -> 1 en móvil
+   Pegar al final de coña.css (después de las reglas .grid/.work)
+   ============================ */
+
+/* Aplica solo al grid del portfolio (añade la clase portfolio-grid en el HTML) */
+.grid.portfolio-grid {
+  display: grid;                             /* usar CSS Grid */
+  grid-template-columns: repeat(4, 1fr);     /* 4 columnas iguales en escritorio */
+  gap: var(--gap);                           /* espacio entre tarjetas (usa la variable global) */
+  align-items: start;                        /* alinear items al inicio verticalmente */
+}
+
+/* Asegurar que cada tarjeta .work ocupe toda la celda y sea cuadrada */
+.grid.portfolio-grid .work {
+  width: 100%;                               /* ancho completo de la celda */
+  margin: 0;                                 /* eliminar márgenes que rompan la rejilla */
+  aspect-ratio: 1 / 1;                       /* fuerza proporción 1:1 (cuadrado) en navegadores modernos */
+  /* mantener overflow/position ya definidos en .work del archivo principal */
+}
+
+/* Fallback para navegadores sin soporte aspect-ratio:
+   el pseudo-elemento crea el espacio cuadrado; el contenido absoluto (.work-inner)
+   ya está preparado en tu CSS para colocarse encima. */
+.grid.portfolio-grid .work::before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* altura = ancho -> cuadrado */
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Si tus .work usan posicionamiento absoluto para el contenido (work-inner),
+   no hace falta cambiarlo aquí; el fallback funcionará con esa estructura. */
+
+/* Breakpoint: pasar de 4 en fila a 2 en fila cuando el ancho sea menor que 1000px.
+   Ajusta 1000px a 1200px o 900px si prefieres que el cambio ocurra antes o después. */
+@media (max-width: 1000px) {
+  .grid.portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);   /* 2 columnas = 2 tarjetas por fila */
+  }
+}
+
+/* Móvil: 1 columna en pantallas muy pequeñas */
+@media (max-width: 600px) {
+  .grid.portfolio-grid {
+    grid-template-columns: 1fr;              /* 1 columna en móvil */
+  }
+
+  /* Opcional: en móvil conviene que .work-inner sea estático para que el contenido fluya */
+  .grid.portfolio-grid .work > .work-inner {
+    position: static;
+    inset: auto;
+    padding: 0;
+  }
+}
+
+/* Tarjeta cuadrada */ /* Comentario de sección */
+.work { /* Cada tarjeta de portfolio */
+  background: #fff; /* Fondo blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta contenido que sobresalga (mantiene border-radius) */
+  aspect-ratio: 1 / 1; /* Fuerza proporción cuadrada en navegadores modernos */
+  display: flex; /* Flexbox para el contenido interno */
+  flex-direction: column; /* Dirección vertical */
+  padding: 12px; /* Espacio interno */
+  border: 1px solid #eee; /* Borde muy suave */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.04); /* Sombra ligera */
+  position: relative; /* Referencia para posicionamiento absoluto de elementos hijos */
+} /* Fin .work */
+
+/* Fallback cuadrado (padding trick) */ /* Comentario de sección */
+.work::before { /* Pseudo-elemento para crear espacio cuadrado en navegadores sin aspect-ratio */
+  content: ""; /* Contenido vacío */
+  display: block; /* Se comporta como bloque */
+  padding-top: 100%; /* Altura igual al ancho -> cuadrado */
+  height: 0; /* Altura real 0 porque usamos padding para crear espacio */
+  width: 100%; /* Ancho completo */
+  visibility: hidden; /* No visible */
+  pointer-events: none; /* No interacciona con el ratón */
+} /* Fin .work::before */
+
+/* Contenido real dentro de la tarjeta. */ /* Comentario de sección */
+.work > .work-inner { /* Contenedor que alberga la imagen y el contenido textual */
+  position: absolute; /* Posicionado respecto a .work para el fallback */
+  inset: 12px; /* top/right/bottom/left = 12px (espacio interior) */
+  display: flex; /* Flexbox para organizar contenido */
+  flex-direction: column; /* Dirección vertical */
+  gap: 8px; /* Espacio entre elementos internos */
+  overflow: hidden; /* Oculta lo que sobresalga; el scroll se gestiona en .content */
+} /* Fin .work > .work-inner */
+
+/* Thumb / imagen */ /* Comentario de sección */
+.work .thumb { /* Contenedor de la imagen dentro de la tarjeta */
+  width: 100%; /* Ancho completo */
+  height: 40%; /* Ocupa el 40% de la altura del área interior */
+  border-radius: 6px; /* Bordes redondeados en la miniatura */
+  overflow: hidden; /* Oculta partes de la imagen que sobresalgan */
+  flex: 0 0 auto; /* No crece ni se encoge; ocupa su tamaño fijo */
+} /* Fin .work .thumb */
+
+.work .thumb img { /* Estilo para la imagen dentro de .thumb */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa del contenedor .thumb */
+  object-fit: cover; /* Recorta la imagen para cubrir el contenedor sin deformar */
+  display: block; /* Evita espacios en línea debajo de la imagen */
+} /* Fin .work .thumb img */
+
+/* Contenido textual: área desplazable dentro del cuadrado */ /* Comentario de sección */
+.work .content { /* Contenedor del texto y botones dentro de la tarjeta */
+  flex: 1 1 auto; /* Ocupa el espacio restante dentro de .work-inner */
+  overflow: auto; /* Permite scroll interno si el contenido excede el espacio */
+  -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+  color: #222; /* Color del texto */
+  padding-right: 6px; /* Espacio a la derecha para evitar que el texto quede pegado al borde */
+  padding-bottom: 48px; /* Espacio inferior para que el contenido no quede oculto bajo el botón Info */
+} /* Fin .work .content */
+
+.work h3 { margin: 0 0 6px 0; font-size: 18px; } /* Título principal: sin margen superior, pequeño margen inferior, tamaño 18px */
+.work h5 { margin: 0 0 8px 0; font-size: 14px; color: var(--muted); } /* Subtítulo: color gris y tamaño 14px */
+.work p { margin: 0 0 8px 0; font-size: 13px; line-height: 1.3; color: #333; } /* Párrafo: margen inferior, tamaño y altura de línea */
+
+/* Línea decorativa */ /* Comentario de sección */
+.line { /* Estilo para <hr class="line"> */
+  border: 0; /* Quita el borde por defecto del hr */
+  height: 3px; /* Altura de la línea */
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); /* Degradado horizontal */
+  width: 60%; /* Ancho relativo dentro del contenedor */
+  margin: 8px auto; /* Centrada horizontalmente con margen vertical */
+  border-radius: 4px; /* Bordes ligeramente redondeados */
+} /* Fin .line */
+
+/* --- Ajustes para que el botón "Contactar" dentro de .content no quede oculto por .info-btn --- */ /* Encabezado del bloque */
+
+/* Aumentar el padding inferior del área desplazable para dejar espacio al botón Info */
+.work .content { /* selector: área de contenido dentro de cada tarjeta */
+  padding-bottom: 72px; /* espacio inferior para que el contenido no quede oculto por el botón Info */
+} /* fin regla .work .content */
+
+/* Asegurar que el botón "Contactar" (.btn.ver) esté por encima del fondo pero debajo de Info visualmente */
+.work .btn.ver { /* selector: botón Contactar dentro de .work */
+  position: relative;   /* mantiene el botón en el flujo del documento pero permite z-index */
+  z-index: 6;           /* coloca el botón por encima del contenido (pero por debajo de .info-btn) */
+} /* fin regla .work .btn.ver */
+
+/* Mantener estilo y accesibilidad del botón ver (ya lo tienes, esto refuerza) */
+.work .btn.ver { /* selector repetido para reforzar estilos visuales */
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); /* fondo degradado usando variables */
+  color: #fff; /* color del texto blanco para contraste */
+  border: none; /* sin borde visible */
+  padding: 8px 12px; /* espacio interno horizontal y vertical */
+  border-radius: 6px; /* esquinas redondeadas */
+  font-weight: 600; /* peso de fuente semi-negrita */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* sombra sutil para elevar visualmente el botón */
+  cursor: pointer; /* cursor puntero al pasar por encima */
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease; /* transiciones suaves para interacciones */
+} /* fin regla visual .work .btn.ver */
+
+/* Si el contenido es muy largo, asegurar que el botón Contactar sea visible al hacer scroll:
+   fijar el botón al final del área visible dentro de .content (opcional) */
+.work .content .btn.ver--sticky { /* selector para la variante sticky del botón Contactar */
+  position: sticky; /* hace que el elemento se quede "pegado" dentro del contenedor cuando se desplaza */
+  bottom: 8px; /* distancia desde la parte inferior del contenedor cuando está en modo sticky */
+  align-self: start; /* alinea el botón al inicio del eje inline dentro del contenedor flex */
+  margin-top: 8px; /* separación superior para separar del contenido anterior */
+  z-index: 6; /* mantiene el mismo nivel de apilamiento que el botón normal */
+} /* fin regla .btn.ver--sticky */
+
+/* --------------------------- */ /* Separador de sección */
+/* Timeline / experiencia */ /* Comentario de sección */
+.timeline { margin-top: 8px; } /* Margen superior para separar del contenido anterior */
+.timeline .item { /* Cada entrada del timeline */
+  padding: 10px; /* Espacio interno */
+  border-left: 3px solid var(--accent); /* Línea vertical de acento a la izquierda */
+  background: #fff; /* Fondo blanco para la entrada */
+  border-radius: 6px; /* Bordes redondeados */
+  margin-bottom: 8px; /* Separación entre entradas */
+} /* Fin .timeline .item */
+
+/* Formulario de contacto */ /* Comentario de sección */
+.contact-form { display: grid; gap: 8px; } /* Formulario en grid con separación entre campos */
+.contact-form input, /* Campos de entrada */
+.contact-form textarea { /* Área de texto */
+  width: 100%; /* Ocupan todo el ancho disponible */
+  padding: 8px; /* Espaciado interno */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 6px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente */
+} /* Fin estilos inputs/textarea */
+
+.form-actions { /* Contenedor para botones del formulario */
+  display: flex; /* Usa flexbox */
+  gap: 8px; /* Espacio entre botones */
+  justify-content: flex-start; /* Alinea a la izquierda */
+} /* Fin .form-actions */
+
+/* Footer */ /* Comentario de sección */
+.site-footer { /* Pie de página */
+  text-align: center; /* Centra el texto */
+  color: white; /* Texto blanco */
+  padding: 12px 0; /* Espaciado vertical */
+} /* Fin .site-footer */
+
+/* Responsive */ /* Comentario de sección */
+@media (max-width: 900px) { /* Reglas para pantallas menores a 900px */
+  .work .thumb { height: 38%; } /* Reduce la altura de la miniatura */
+  .wrap { padding: 16px; } /* Reduce el padding del contenedor */
+} /* Fin media 900px */
+
+@media (max-width: 600px) { /* Reglas para pantallas menores a 600px (móviles) */
+  .name { font-size: 20px; } /* Reduce tamaño del nombre */
+  .top-links { gap: 8px; margin: 12px 0; } /* Ajusta espacio de enlaces superiores */
+  .grid { gap: 10px; } /* Reduce gap del grid */
+  .work { padding: 10px; } /* Reduce padding de las tarjetas */
+  /* En móviles, hacemos que .work-inner sea estático para que el contenido fluya */
+  .work > .work-inner { position: static; inset: auto; padding: 0; } /* Evita posicionamiento absoluto en móvil */
+  /* Ajustes para botones en móvil */
+  .info-btn { right: 8px; bottom: 8px; } /* Reduce separación del botón Info */
+  .info-btn .btn.info { padding: 6px 10px; font-size: 14px; } /* Reduce tamaño del botón Info */
+  .work .btn.ver { padding: 6px 10px; } /* Reduce tamaño del botón Ver */
+} /* Fin media 600px */
+
+/* Contenedor que agrupa los recuadros y los coloca en grid */
+.skill-boxes {                      /* inicio .skill-boxes */
+  display: grid;                    /* usar CSS Grid para distribuir cajas */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales en escritorio (3 en fila) */
+  gap: 16px;                         /* espacio entre recuadros */
+  margin-top: 16px;                  /* separación respecto al contenido anterior */
+  align-items: start;                /* alinear elementos al inicio verticalmente */
+} /* fin .skill-boxes */
+
+/* Cada recuadro individual: forzar proporción cuadrada */
+.skill-box {                         /* inicio .skill-box */
+  position: relative;                /* referencia para elementos absolutos internos */
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), var(--card-bg)); /* fondo suave */
+  border-radius: var(--radius);      /* radio de borde consistente */
+  overflow: hidden;                  /* recorta contenido que sobresalga */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* sombra sutil */
+  border: 1px solid rgba(0,0,0,0.04); /* borde tenue */
+  display: block;                    /* comportamiento de bloque */
+  aspect-ratio: 1 / 1;               /* fuerza proporción 1:1 (cuadrado) */
+} /* fin .skill-box */
+
+/* Fallback para navegadores sin soporte aspect-ratio */
+.skill-box::before {                 /* pseudo-elemento para crear espacio cuadrado */
+  content: "";                       /* contenido vacío */
+  display: block;                    /* se comporta como bloque */
+  padding-top: 100%;                 /* altura = ancho -> cuadrado */
+  width: 100%;                       /* ancho completo */
+  height: 0;                         /* altura real 0 (usamos padding) */
+  visibility: hidden;                /* no visible */
+  pointer-events: none;              /* no interacciona con el ratón */
+} /* fin .skill-box::before */
+
+/* Contenido real dentro de la caja: se posiciona encima del pseudo-elemento */
+.skill-box > .skill-box__inner {     /* inicio .skill-box__inner */
+  position: absolute;                /* posicionado respecto a .skill-box */
+  inset: 12px;                       /* top/right/bottom/left = 12px (espacio interior) */
+  display: flex;                     /* usar flexbox para organizar contenido */
+  flex-direction: column;            /* apilar elementos verticalmente */
+  gap: 8px;                          /* espacio entre elementos internos */
+  overflow: hidden;                  /* ocultar lo que sobresalga; scroll en .skill-box__content */
+} /* fin .skill-box__inner */
+
+/* Área desplazable para texto/listas si es necesario */
+.skill-box__content {                 /* inicio .skill-box__content */
+  flex: 1 1 auto;                     /* ocupa el espacio disponible */
+  overflow: auto;                     /* permite scroll interno si el contenido excede */
+  -webkit-overflow-scrolling: touch;  /* scroll suave en iOS */
+  padding-right: 6px;                 /* evita que el texto quede pegado al borde al hacer scroll */
+} /* fin .skill-box__content */
+
+/* Título dentro del recuadro */
+.skill-box h3 {                       /* inicio estilo h3 en .skill-box */
+  margin: 0;                          /* sin margen por defecto */
+  font-size: 16px;                    /* tamaño de fuente */
+  color: var(--text);                 /* color de texto usando variable */
+} /* fin .skill-box h3 */
+
+/* Párrafo dentro del recuadro */
+.skill-box p {                        /* inicio estilo p en .skill-box */
+  margin: 0;                          /* sin margen superior */
+  font-size: 13px;                    /* tamaño de fuente */
+  color: #444;                        /* color gris oscuro */
+  line-height: 1.35;                  /* altura de línea legible */
+} /* fin .skill-box p */
+
+/* Lista dentro del recuadro */
+.skill-box ul {                       /* inicio estilo ul en .skill-box */
+  margin: 6px 0 0 18px;               /* margen superior y sangría izquierda */
+  padding: 0;                         /* sin padding por defecto */
+  font-size: 13px;                    /* tamaño de fuente */
+  color: #333;                        /* color del texto */
+} /* fin .skill-box ul */
+
+/* Botón dentro del recuadro */
+.skill-box .btn {                     /* inicio estilo .btn dentro de .skill-box */
+  margin-top: 8px;                    /* separación superior para separar del contenido */
+  align-self: start;                  /* alinea el botón al inicio horizontal */
+} /* fin .skill-box .btn */
+
+/* Efecto hover: ligera elevación */
+.skill-box:hover {                    /* inicio hover .skill-box */
+  transform: translateY(-6px);        /* eleva la tarjeta ligeramente */
+  transition: transform .14s ease, box-shadow .14s ease; /* transición suave */
+  box-shadow: 0 18px 36px rgba(0,0,0,0.10); /* sombra más pronunciada al hover */
+} /* fin hover .skill-box */
+
+/* Variante destacada (opcional): estilo con acento */
+.skill-box--accent {                  /* inicio .skill-box--accent */
+  background: linear-gradient(180deg, rgba(74,144,226,0.06), rgba(80,201,195,0.03)); /* sutil degradado */
+  border: 1px solid rgba(74,144,226,0.10); /* borde con tono de acento */
+} /* fin .skill-box--accent */
+
+/* Responsive: pasar de 3 en fila a 2 en fila (tablet/zoom) */
+@media (max-width: 1000px) {          /* inicio media query 1000px */
+  .skill-boxes { grid-template-columns: repeat(2, 1fr); } /* 2 columnas (2 en fila) */
+} /* fin media 1000px */
+
+/* En pantallas muy pequeñas (móvil) apilar en 1 columna */
+@media (max-width: 600px) {           /* inicio media query 600px */
+  .skill-boxes { grid-template-columns: 1fr; } /* 1 columna en móvil */
+  .skill-box > .skill-box__inner { inset: 10px; } /* reducir inset en móvil */
+} /* fin media 600px */
+
+/* Layout sobre-mi: imagen a la izquierda, texto a la derecha */
+/* Grid principal */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1rem;          /* rem en lugar de px para mejor escalabilidad */
+  align-items: start; /* alinear al inicio verticalmente */ 
+}
+
+/* Regla más específica para asegurar que se aplique */
+section#sobre-mi .sobre-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* fuerza proporción cuadrada */
+  overflow: hidden;  /* recorta la imagen para mantener el cuadrado */
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
+  background: #eee;
+  display: block;
+  transform: translateX(-12px); /* desplaza a la izquierda */
+  will-change: transform;
+  transition: transform .18s ease; /* transición suave para el desplazamiento */
+}
+
+/* Imagen: cubrir contenedor y controlar foco del recorte */
+.sobre-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% 50%; /* mueve el foco hacia la izquierda */
+  display: block;
+  border-radius: inherit;  /* hereda el border-radius del contenedor para mantener la forma */
+}
+
+/* Márgenes laterales del texto */
+.sobre-text {
+  padding: 0 1.1rem; /* espacio horizontal para separar del borde y la imagen */
+}
+
+/* Responsive */
+@media (max-width:720px) {
+  .sobre-grid { grid-template-columns: 1fr; gap: 0.75rem; } 
+  section#sobre-mi .sobre-img-wrap { transform: none; margin: 0 auto; max-width: 320px; }
+  .sobre-text { padding: 0 0.75rem; }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; } 
+}
+
+
+
+/* Header con imagen de fondo y overlay */
+.site-header--bg {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 0; /* ajusta espacio vertical */
+  color: #fff;
+}
+
+/* Contenedor de la imagen de fondo (cubre todo el header) */
+.site-header__bg {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-image: url("/IMAGENES/WW2.jpg"); /* sustituye por tu ruta */
+  background-size: 100%;       /* cubrir todo el área */
+  background-position: center;  /* centrar la imagen */
+  background-repeat: no-repeat; /* evitar repetición */
+  filter: saturate(0.95) contrast(0.98); /* ajuste sutil de color */
+  transform-origin: center; /* punto de origen para transformaciones */
+  z-index: 0; /* colocar el fondo detrás del contenido */
+  will-change: transform; /* mejora rendimiento si planeas animar el fondo */
+}
+
+/* Overlay para mejorar legibilidad del texto sobre la imagen */
+.site-header--bg::before {
+  content: ""; /* contenido vacío */
+  position: absolute;
+  inset: 0;  /* cubre todo el header */
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)); /* oscurece la imagen */
+  z-index: 1; /* coloca el overlay por encima de la imagen pero debajo del contenido */
+  pointer-events: none;
+}
+
+/* Contenido del header por encima del overlay */
+.site-header__content {
+  position: relative;         /* relativo para que el z-index funcione respecto al fondo y overlay */
+  z-index: 2;                /* coloca el contenido por encima del fondo y el overlay */
+  display: flex;            /* usar flexbox para organizar el contenido */
+  flex-direction: column;  /* apilar verticalmente el nombre y las tags */
+  align-items:flex-start; /* alinea a la izquierda */  
+  gap: 6px;              /* espacio entre el nombre y las tags */
+}
+
+/* Ajustes tipográficos (heredan variables si existen) */
+.site-header .name {
+  margin: 0;
+  color: #fff;
+  font-size: 32px;
+  letter-spacing: 0.6px;                        /* espacio entre letras */
+  text-shadow: 0 6px 18px rgba(0,0,0,0.35);  /* sombra para mejorar legibilidad */
+}
+
+.site-header .tags {
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+  font-weight: 500;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Opcional: efecto parallax sutil al hacer scroll (solo si quieres) */
+@media (prefers-reduced-motion: no-preference) {
+  .site-header__bg {
+    transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
+  }
+  /* ejemplo: al hacer hover o foco se puede escalar ligeramente */
+  .site-header--bg:hover .site-header__bg { transform: scale(1.02); }
+}
+
+/* Responsive: reducir tamaño del header en pantallas pequeñas */
+@media (max-width: 700px) { 
+  .site-header--bg { padding: 22px 0; }    /* reduce espacio vertical del header en móvil */
+  .site-header .name { font-size: 22px; } /* reduce tamaño del nombre en móvil */
+  .site-header .tags { font-size: 14px; } /* reduce tamaño de las tags en móvil */
+}
+
+/* Alternativa: usar imagen de fondo diferente en móvil (opcional) */
+@media (max-width: 420px) {
+  .site-header__bg { background-position: center top; background-size: cover; } /* ajusta el foco de la imagen para móviles */
+}
+
+/* Asegura que las cajas de imagen tengan tamaño visible */
+.thumb, .random-img {
+  width: 100%;
+  height: 230px;            /* altura fija fiable */
+  border-radius: 8px;
+  background-color: #ddd;   /* color mientras carga la imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* evita repetición de la imagen */
+}
+
+/* Quitar estilos por defecto del botón y hacer que solo se vea la imagen */
+p { margin: 0; padding: 0; }
+
+p a { display: inline-block; margin: 0; padding: 0; text-decoration: none; }
+
+/* Hacemos que el botón no añada padding ni borde y no ocupe espacio extra */
+p a button {
+  background: transparent;    /* fondo transparente para que solo se vea la imagen */
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block; /* se comporta como bloque en línea */
+  line-height: 0;      /* elimina espacio vertical */
+  cursor: pointer;     /* opcional */
+}
+
+/* Imagen dentro del botón: bloque para evitar gaps */
+p a button img {
+  display: block;       /* elimina espacio debajo de la imagen */
+  width: 40px;         /* ajusta tamaño */
+  height: auto;       /* mantiene proporción */
+  border: 0;         /* elimina borde por defecto */
+  margin: 0;        /* opcional: elimina margen */
+  padding: 0;      /* opcional: añade un poco de espacio entre iconos si hay varios */
+}
+
+
+ #ig{ /* ID específico para el icono de Instagram */
+  width: 25px;
+  height: 25px;
+}
+#tiktok{ /* ID específico para el icono de TikTok */
+  width: 25px;
+  height: 25px;
+}
+#LINKEDIN{ /* ID específico para el icono de LinkedIn */
+  width: 25px;
+  height: 25px;
+}
+#facebook{ /* ID específico para el icono de Facebook */
+  width: 35px;
+  height: 25px;
+}
+#sobre-mi{
+  background: linear-gradient(135deg, var(--bg3), var(--bg4)); /* Fondo degradado diagonal */
+}
+#portfolio{
+  background: linear-gradient(250deg, var(--bg1), var(--bg2)); /* Fondo degradado diagonal */
+}
+/* ----------------------------------------------------------
+   FONDO ANIMADO CON GRADIENTE
+   - Cambia de color suavemente
+   - No usa imágenes (muy ligero)
+   - Compatible con todos los navegadores modernos
+----------------------------------------------------------- */
+.fondo-animado {
+  background: linear-gradient(270deg, #ff0008bb, #9e84b8, #00d3b7b6); /* Degradado con colores */
+  background-size: 600% 600%;   /* Tamaño grande para que la animación sea suave */
+  animation: moverFondo 12s ease infinite; /* Duración y suavidad */
+}
+.fondo-animado1 {
+  background: linear-gradient(270deg, #c99496f2, #9956db, #0b8474b6); /* Degradado con colores */
+  background-size: 600% 600%;   /* Tamaño grande para que la animación sea suave */
+  animation: moverFondo 12s ease infinite; /* Duración y suavidad */
+}
+
+/* ----------------------------------------------------------
+   ANIMACIÓN DEL GRADIENTE
+   - Mueve el fondo horizontalmente
+   - Crea el efecto de transición de colores
+----------------------------------------------------------- */
+@keyframes moverFondo {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.slideshow2 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.slide2 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.city.main {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.sobre-img-wrap1 {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+}
+
+/* Imagen */
+.sobre-img-1 {
+  width: 100%;
+  height: auto;
+  cursor: grab;
+  transition: transform 0.2s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Botón flotante arriba a la izquierda */
+.reset-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 5px;
+  height: 5px;
+  background: var(--bg1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  transition: 0.2s ease;
+   z-index: 10;
+}
+
+/* Efecto hover para que se note */
+.reset-btn:hover {
+  transform: scale(2.5);
+}
+
+.legal-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0;
+  font-size: 0.95rem;
+}
+
+.legal-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.legal-check a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+
+/* =========================== */ /* Separador final */
+/* Notas: */ /* Comentario final */
+ /* - Mantén la estructura HTML recomendada para que los estilos funcionen correctamente. */ /* Nota */
+ /* - Si quieres eliminar el fallback, borra .work::before y adapta .work-inner a position: static. */ /* Nota */
+ /* - Para cambiar colores o tamaños, edita las variables en :root. */ /* Nota */
+

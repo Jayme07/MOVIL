@@ -1,0 +1,472 @@
+<!DOCTYPE html> <!-- Declara que este documento es HTML -->
+<html lang="es"> <!-- Elemento raíz; idioma del documento en español -->
+<head> <!-- Inicio de la cabecera con metadatos -->
+  <meta charset="utf-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- width=device-width → usa el ancho real del dispositivo, initial-scale=1 → la página empieza sin zoom (escala 100%) -->
+  <title>Portfolio — Adrián Podar Olmeda</title> <!-- Texto que aparece en la pestaña del navegador -->
+  <link rel="stylesheet" href="ComProfe.css"> <!-- Enlaza el archivo CSS externo -->
+</head> <!-- Fin de la cabecera -->
+  
+<body> <!-- Inicio del contenido visible de la página -->
+<div class="wrap">
+     <!-- Contenedor de enlaces superiores centrados -->
+  <!-- .top-links y .wrap centran y limitan el ancho de los enlaces -->
+<div class="top-links">
+  <a href="#sobre-mi" class="btn">SOBRE MÍ</a> <!-- Enlace a la sección "Sobre mí" -->
+  <a href="#portfolio" class="btn">PORTFOLIO</a> <!-- Enlace a la sección "Portfolio" -->
+  <img src="/IMAGENES/robot" alt="instagram"  id="ig" >
+  <a href="#skills" class="btn">EXPERIENCIA</a> <!-- Enlace a la sección "Skills/Experiencia" -->
+  <a href="#contacto" class="btn">CONTACTO</a>  <!-- Enlace a la sección "Contacto" -->
+</div>
+</div>
+
+<div class="wrap">
+  <header class="site-header site-header--bg">
+    <!-- Contenedor de la imagen de fondo
+         - Se usa CSS para aplicar la imagen (background-image).
+         - aria-hidden="true" indica que esta capa es decorativa y no debe ser leída por lectores de pantalla. -->
+    <div class="site-header__bg" aria-hidden="true"></div>
+
+       <div class="wrap site-header__content"><!-- Contenedor que centra y limita el ancho -->
+        <h1 class="name">Adrián Podar Olmeda</h1> <!-- Nombre principal del portafolio -->
+        <br><p class="tags">#programador</p> <!-- Etiquetas o roles -->
+        <p class="tags">#músico</p> <!-- Etiquetas o roles -->
+        <nav class="main-nav"> <!-- Menú de navegación -->
+       </nav> <!-- Fin del menú de navegación -->
+      <br> <br> <!-- Salto de línea para separar el contenido -->  
+       <p> <!-- Párrafo adicional -->
+      <a href="https://www.instagram.com/proyectos_de_clases_?igsh=aGd2MzlxZnpiYjI2" target="_blank"> <!--target sirve para crear una pag aparte y mantiene la web  -->
+        <button>  <img src="/IMAGENES/ig.jpg" alt="instagram"  id="ig" > </button> <!-- Botón con imagen de Instagram -->
+      </a>
+      <a href="https://www.tiktok.com/@adr_1909?_r=1&_t=ZN-96TNJvoN5AE" target="_blank"> <!--target sirve para crear una pag aparte y mantiene la web  -->
+        <button><img src="/IMAGENES/tiktok.png" alt="tiktok"  id="tiktok" ></button> <!-- Botón con imagen de TikTok -->
+      </a>
+      <a href="https://www.linkedin.com/in/adri%C3%A1n-podar-61b47a368//" target="_blank"> <!--target sirve para crear una pag aparte y mantiene la web  -->
+        <button><img src="/IMAGENES/linkedin.png" alt="linkedin"  id="LINKEDIN" ></button> <!-- Botón con imagen de LinkedIn -->
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61589781612982" target="_blank"> <!--target sirve para crear una pag aparte y mantiene la web  -->
+        <button><img src="/IMAGENES/facebook.jpg" alt="facebook"  id="facebook" ></button> <!-- Botón con imagen de Facebook -->
+      </a>
+      </p> <!-- Fin del párrafo adicional --> 
+      </div> 
+    </div>
+  </header>
+    
+ <!-- Contenedor principal del contenido -->
+  <main class="wrap">
+    <!-- Sección "Sobre mí" con estilo de tarjeta -->
+    <section id="sobre-mi" class="card section-bg section-bg--hero"> <!-- ID para navegación, clase "card" para estilo de tarjeta, clases para fondo -->
+  <div class="sobre-grid"><!-- Contenedor en grid para imagen y texto -->
+    <!-- Imagen a la izquierda: sustituye src por la ruta de tu foto -->
+    <figure class="sobre-img-wrap1 sobre-img-wrap" aria-hidden="false">
+  <button id="resetZoom" class="reset-btn"></button>
+  <img src="/IMAGENES/yo.jpeg" alt="Foto de Adrián Podar Olmeda" class="sobre-img1 sobre-img">
+</figure>
+
+    <!-- Texto a la derecha -->
+    <div class="sobre-text">
+      <h2>SOBRE MÍ</h2>
+      <p class="lead">
+        Adrián Podar Olmeda es un técnico en formación dentro del ámbito de la Automatización y la Robotización Industrial, actualmente cursando un ciclo formativo de grado superior que refuerza sus competencias en programación de sistemas automáticos, montaje de circuitos eléctricos e hidráulicos, simulación de PLC y elaboración de documentación técnica conforme a estándares industriales.
+      </p>
+      <a class="btn primary btn-right" href="#contacto">+INFO</a>
+    </div>
+  </div>
+</section>
+
+<!-- Sección PORTFOLIO con grid preparado para 4 en fila (pasa a 2 en breakpoints con CSS) -->
+<section id="portfolio" class="card">
+  <!-- Título de la sección portfolio -->
+  <h2 class="city main">PORTFOLIO</h2>
+  <p class="city main">Alguno de los proyectos en los que he trabajado</p>
+<br>
+  <!-- Contenedor en grid para las tarjetas de proyectos -->
+  <div class="grid portfolio-grid">
+    <!-- Primera tarjeta de trabajo -->
+    <article class="work">
+      <div class="work-inner">
+        <div class="thumb random-img"></div>
+        
+        <div class="content">
+          <h3>Concierto en Guadalajara</h3>
+          <h5>Producción y mezcla en directo</h5>
+          <hr class="line">
+          <p>Producción y mezcla en directo para evento de gran formato. Coordinación técnica y musical.</p>
+          <!-- Botón Contactar dentro de la tarjeta -->
+          <a class="btn ver" href="#contacto" aria-label="Contactar sobre Concierto Benicàssim">+Info</a>
+        </div>
+      </div>
+   </article>
+
+    <!-- Segunda tarjeta de trabajo -->
+    <article class="work">
+      <div class="work-inner">
+        <div class="thumb random-img"></div>
+          
+        <div class="content">
+          <h3>BSO videojuego</h3>
+          <h5>Composición para videojuego</h5>
+          <hr class="line">
+          <p>Composición, diseño y sonoro para videojuego independientes, adaptando temas a mecánicas de juego y narrativas.</p>
+          <!-- Botón Contactar dentro de la tarjeta -->
+          <a class="btn ver" href="#contacto" aria-label="Contactar sobre BSO videojuego">+Info</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Tercera tarjeta de trabajo -->
+    <article class="work">
+      <div class="work-inner">
+        <div class="thumb random-img"></div>
+        <div class="content">
+          <h3>Proyecto Industrial</h3>
+          <h5>Automatización y control</h5>
+          <hr class="line">
+          <p>Programación de PLC y diseño de esquemas para línea de producción automatizada.</p>
+          <!-- Botón Contactar dentro de la tarjeta -->
+          <a class="btn ver" href="#contacto" aria-label="Contactar sobre Proyecto Industrial">+Info</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Cuarta tarjeta de trabajo -->
+    <article class="work">
+      <div class="work-inner">
+        <div class="thumb random-img"></div>
+        <div class="content">
+          <h3>Producción en directo</h3>
+          <h5>Dirección técnica</h5>
+          <hr class="line">
+          <p>Dirección técnica y mezcla en directo para giras y eventos corporativos.</p>
+          <!-- Botón Contactar dentro de la tarjeta -->
+          <a class="btn ver" href="#contacto" aria-label="Contactar sobre Producción en directo">+Info</a>
+        </div>
+      </div>
+   </article>
+  </div>
+  <br>
+</section>
+
+<!-- Sección de experiencia y habilidades -->
+<section id="skills" class="card fondo-animado1"> <!-- ID para navegación, clase "card" para estilo de tarjeta, clase para fondo animado -->
+  <!-- Título de la sección -->
+  <h2 class="city main" >EXPERIENCIA & <span style="color: rgb(145, 89, 17);">SKILLS</spam></h2>
+
+  <!-- Párrafo introductorio -->
+  <p  class="city.main city main">Profesional en formación dentro del ámbito de la automatización industrial, con experiencia en programación de sistemas automáticos, montaje de circuitos y documentación técnica. Combina una base técnica sólida con disciplina, capacidad analítica y una orientación constante a la mejora de procesos.</p>
+<br>
+  <!-- Contenedor de los 4 recuadros cuadrados -->
+  <!-- Contenedor de los 6 recuadros cuadrados (3 arriba, 3 abajo) -->
+<div class="skill-boxes" aria-label="Recuadros adicionales de experiencia">
+  <!-- Fila 1: 3 recuadros -->
+  <div class="skill-box ">
+    <div class="skill-box__inner">
+      <h3>Proyectos destacados</h3>
+      <div class="skill-box__content">
+        <p>Resumen breve de proyectos relevantes realizados en entornos industriales y musicales.</p>
+        <ul>
+          <li>Integración de PLC para línea de ensamblaje</li>
+          <li>Composición y mezcla para videojuego independiente</li>
+          <li>Dirección técnica en eventos en vivo</li>
+        </ul>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fantasm_techno/video/7571542234559040790" data-video-id="7571542234559040790" style="max-width: 605px;min-width: 325px;">
+  <section>
+    <a target="_blank" title="@fantasm_techno" href="https://www.tiktok.com/@fantasm_techno">@fantasm_techno</a>
+  </section>
+  </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-box">
+    <div class="skill-box__inner">
+      <h3>Certificaciones</h3>
+      <div class="skill-box__content">
+        <p>Formación y cursos que respaldan las competencias técnicas.</p>
+        <ul>
+          <li>Ciclo Formativo de Grado Superior en Automatización</li>
+          <li>Curso de programación de PLC</li>
+          <li>Talleres de producción musical</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-box">
+    <div class="skill-box__inner">
+      <h3>Herramientas</h3>
+      <div class="skill-box__content">
+        <p>Software y herramientas habituales.</p>
+        <ul>
+          <li>Siemens / Allen-Bradley (PLC)</li>
+          <li>Ableton Live, Pro Tools</li>
+          <li>HTML, CSS, JavaScript</li>
+        </ul>
+        <br>
+        <div class="slideshow2">
+            <img src="/IMAGENES/Imagen1.png" class="slide2">
+           <img src="/IMAGENES/Imagen2.png" class="slide2">
+            <img src="/IMAGENES/Imagen3.png" class="slide2">
+            <img src="/IMAGENES/Imagen4.png" class="slide2">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Fila 2: otros 3 recuadros -->
+  <div class="skill-box">
+    <div class="skill-box__inner">
+      <h3>Logros</h3>
+      <div class="skill-box__content">
+        <p>Proyectos, premios o hitos destacados.</p>
+        <ul>
+          <li>Implementación de línea automatizada</li>
+          <li>Publicación de BSO para proyecto independiente</li>
+          <li>Dirección técnica en giras</li>
+        </ul>
+
+      <!-- TikTok embed -->
+        <blockquote class="tiktok-embed" 
+         cite="https://www.tiktok.com/@ravingreviews/video/7547739182345555222" 
+          data-video-id="7547739182345555222" 
+           style="max-width: 605px; min-width: 325px;">
+          <section>
+           <a target="_blank" title="@ravingreviews" href="https://www.tiktok.com/@ravingreviews">@ravingreviews</a>
+           </section>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-box">
+    <div class="skill-box__inner">
+      <h3>Formación complementaria</h3>
+      <div class="skill-box__content">
+        <p>Cursos y talleres adicionales.</p>
+        <ul>
+          <li>Seguridad industrial</li>
+          <li>Redes industriales</li>
+          <li>Control PID avanzado</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-box">
+    <div class="skill-box__inner">
+      <h3>Soft skills</h3>
+      <div class="skill-box__content">
+        <p>Habilidades personales y de equipo.</p>
+        <ul>
+          <li>Trabajo en equipo</li>
+          <li>Resolución de problemas</li>
+          <li>Comunicación técnica</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+    <!-- Sección de contacto con formulario -->
+    <section id="contacto" class="card fondo-animado"> <!-- ID para navegación, clase "card" para estilo de tarjeta, clase para fondo animado -->
+     <!-- Título de la sección -->
+      <h2>CONTACTO</h2>
+
+      <!-- Formulario configurado para Formspree (reemplazar endpoint real) -->
+      <form class="contact-form" action="https://www.youtube.com/watch?v=mNrzmpA8JU4&list=RDmNrzmpA8JU4&start_radio=1" method="POST">
+        <!-- Campo: nombre -->
+        <label>
+          <!-- Etiqueta visible para el campo -->
+          <span>Nombre :</span>
+          <!-- Input de texto para el nombre, requerido -->
+          <input type="text" name="nombre" placeholder="Tu nombre" required pattern="[A-Za-z\s]{2,}" title="Introduce un nombre válido (solo letras y espacios, mínimo 2 caracteres)"> <!-- Validación de patrón para solo letras y espacios -->
+        </label>
+
+        <!-- Campo: empresa (opcional) -->
+        <label>
+          <span>Empresa :</span>
+          <input type="text" name="empresa" placeholder="Empresa (opcional)">
+        </label>
+
+        <!-- Campo: teléfono -->
+        <label>
+          <span>Teléfono :</span>
+          <input type="tel" name="telefono" placeholder="Teléfono"required pattern="[0-9\s\-\+\(\)]{7,}" title="Introduce un número de teléfono válido">  <!-- Input de tipo teléfono con validación de patrón -->
+        </label>
+
+        <!-- Campo: email (requerido) -->
+        <label>
+          <span>Email :</span>
+          <input type="email" name="email" placeholder="tu_email@ejemplo.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Introduce una dirección de correo electrónico válida"> <!-- Input de tipo email con validación de patrón -->
+        </label>
+
+        <!-- Campo: mensaje -->
+        <label>
+          <span>Mensaje :</span>
+          <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+        </label>
+
+        <!-- Campo oculto: URL de redirección tras envío -->
+        <input type="hidden" name="_next">
+        <!-- Campo oculto: asunto del correo que recibirás -->
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde el portfolio">
+        <!-- Honeypot anti-spam: campo oculto que bots suelen rellenar -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <!-- Contenedor de acciones del formulario (botones) -->
+        <div class="form-actions">
+          <!-- Botón para enviar el formulario -->
+          <button type="submit" class="btn primary">Enviar</button>
+          <!-- Botón para resetear/limpiar el formulario -->
+          <button type="reset" class="btn primary">Limpiar</button>
+        </div> 
+        <!-- Aceptación de condiciones y privacidad -->
+      <label class="legal-check">
+         <input type="checkbox" name="acepto" required>
+           <span>Acepto las <a href="separado_ok.html" target="_blank">condiciones</a> y la <a href="separado_ok.html" target="_blank">política de privacidad</a>.</span>
+      </label>
+      </form>
+     </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="site-footer">
+    <!-- .wrap centra el contenido del footer -->
+    <div class="wrap">
+      <!-- Texto de copyright con año dinámico -->
+      <small>© <span id="year"></span> Adrián Podar Olmeda — Portfolio</small>
+    </div>
+  </footer>
+
+  <!-- Script que inserta el año actual en el elemento con id "year" -->
+  <script>
+    /* Selecciona el elemento con id "year" y le asigna el año actual */
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script> /* Script para asignar imágenes aleatorias a los divs con clase .random-img */
+document.addEventListener('DOMContentLoaded', () => {
+  const randomImages = document.querySelectorAll('.random-img');
+
+  if (!randomImages.length) {
+    console.warn('No se encontraron elementos .random-img. Revisa la clase en el HTML.');
+    return;
+  }
+
+  randomImages.forEach((div, index) => {
+    const seed = Date.now() + index;
+    const url = `https://picsum.photos/800/500?random=${seed}`;
+
+    // Preload para comprobar carga antes de aplicar como background
+    const img = new Image();
+    img.onload = () => {
+      div.style.backgroundImage = `url('${url}')`;
+      div.setAttribute('data-bg-src', url); // útil para depuración
+      console.log('Imagen asignada a .random-img[' + index + ']:', url);
+    };
+    img.onerror = () => {
+      console.warn('No se pudo cargar', url, '-> aplica fallback local si lo deseas.');
+      // div.style.backgroundImage = "url('IMAGENES/fallback.jpg')";
+    };
+    img.src = url;
+  });
+});
+</script>
+<script async src="https://www.tiktok.com/embed.js"></script> 
+<script async src="https://www.tiktok.com/embed.js"></script> 
+
+<script> /* Alternar Imagenes en el slideshow */
+  const slides = document.querySelectorAll(".slide2");
+  let i = 0;
+
+  function cambiar() {
+    slides.forEach(s => s.style.opacity = 0);
+    slides[i].style.opacity = 1;
+    i = (i + 1) % slides.length;
+  }
+
+  cambiar();
+  setInterval(cambiar, 3000);
+</script>
+
+<script>
+const img = document.querySelector('.sobre-img1');
+const resetBtn = document.getElementById('resetZoom');
+
+let scale = 1;
+let posX = 0;
+let posY = 0;
+let isDragging = false;
+let startX, startY;
+
+// Actualizar transform
+function updateTransform() {
+  img.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+}
+
+// Zoom con la rueda
+img.addEventListener('wheel', function(e) {
+  e.preventDefault();
+  const delta = e.deltaY * -0.001;
+  scale += delta;
+  scale = Math.min(Math.max(1, scale), 4);
+  updateTransform();
+});
+
+// Doble clic para acercar/alejar
+img.addEventListener('dblclick', function() {
+  if (scale === 1) {
+    scale = 2; // zoom rápido
+  } else {
+    scale = 1;
+    posX = 0;
+    posY = 0;
+  }
+  updateTransform();
+});
+
+// Inicio del arrastre
+img.addEventListener('mousedown', function(e) {
+  if (scale === 1) return;
+  isDragging = true;
+  img.style.cursor = "grabbing";
+  startX = e.clientX - posX;
+  startY = e.clientY - posY;
+});
+
+// Arrastrar
+img.addEventListener('mousemove', function(e) {
+  if (!isDragging) return;
+  posX = e.clientX - startX;
+  posY = e.clientY - startY;
+  updateTransform();
+});
+
+// Fin del arrastre
+img.addEventListener('mouseup', function() {
+  isDragging = false;
+  img.style.cursor = "grab";
+});
+
+img.addEventListener('mouseleave', function() {
+  isDragging = false;
+  img.style.cursor = "grab";
+});
+
+// Botón reset
+resetBtn.addEventListener('click', function() {
+  scale = 1;
+  posX = 0;
+  posY = 0;
+  updateTransform();
+});
+</script>
+
+
+
+
+</body>
+</html>
